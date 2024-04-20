@@ -40,6 +40,14 @@ top -b -o +%MEM | head -n 11
 echo "Top 10 processes based on CPU utilization:"
 top -b -o +%CPU | head -n 11
 
+#descending order, and then it shows the top 10 processes based on CPU usage
+echo "Top 10 processes based on CPU utilization:"
+ps -eo pid,ppid,%mem,%cpu,cmd --sort=-%cpu | head -n 11
+
+
+
+
+
 # Top 10 processes based on their PIDs
 echo "Top 10 processes based on their PIDs: "
 top -b -o -PID | head -n 11
